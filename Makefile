@@ -6,6 +6,7 @@ deps:
 	go get -u github.com/maxbrunsfeld/counterfeiter
 	go get -u github.com/onsi/ginkgo/ginkgo
 	go get -u golang.org/x/tools/cmd/goimports
+	go get -u github.com/actgardner/gogen-avro/gogen-avro
 
 precommit: ensure format generate test check addlicense
 	@echo "ready to commit"
@@ -43,4 +44,4 @@ lint:
 
 errcheck:
 	@go get github.com/kisielk/errcheck
-	@errcheck -ignore '(Close|Write|Fprintf)' $(shell go list ./... | grep -v /vendor/)
+	@errcheck -ignore '(Close|Write|Fprint)' $(shell go list ./... | grep -v /vendor/)
